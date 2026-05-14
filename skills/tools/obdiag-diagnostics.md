@@ -1,5 +1,7 @@
 # obdiag 诊断工具详解
 
+
+
 > 适用版本：obdiag V2.x / OceanBase V4.2+
 > 兼容模式：MySQL Mode / Oracle Mode
 
@@ -23,21 +25,33 @@ obdiag（OceanBase Diagnostics）是 OceanBase 官方诊断工具，提供一键
 ## 1. 安装
 
 ```bash
-# 方式1：独立安装
+# 方式1：源码安装
 wget https://mirrors.aliyun.com/oceanbase/OBDIAG/current/obdiag-linux-x86_64.tar.gz
 tar -xzf obdiag-linux-x86_64.tar.gz
 export PATH=$PWD/obdiag/bin:$PATH
 
-# 方式2：通过 pip
-pip install obdiag
+# 方式2：在线yum 安装
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://mirrors.aliyun.com/oceanbase/OceanBase.repo
+sudo yum install -y oceanbase-diagnostic-tool
+sh /opt/oceanbase-diagnostic-tool/init.sh
 
 # 方式3：OBD 附带
-# OBD 部署集群时自动安装 obdiag
+# 在线安装
+obd mirror enable remote
+obd obdiag deploy
+
+# 离线安装
+从https://www.oceanbase.com/softwarecenter 下载obdiag 的 RPM 包
+obd mirror clone oceanbase-diagnostic-tool-*.rpm
+obd obdiag deploy
 
 # 验证
 obdiag --version
 obdiag --help
 ```
+
+注意： 在线 YUM 方式支持 CentOS 7/8，暂不支持 CentOS 9；CentOS 9 请使用下方离线部署或源码安装。
 
 ---
 
@@ -68,7 +82,23 @@ vi ~/.obdiag/config.yaml
 #       hosts:
 #         - ip: 10.0.0.10
 #           port: 2883
+
+# 使用命令行配置
+obdiag config -h <db_host> -u <sys_user> [-p password] [-P port]
+
+例子
+# 密码非空例子
+obdiag config -hxx.xx.xx.xx -uroot@sys -p***** -P2881
+
+# 空密码场景
+obdiag config -hxx.xx.xx.xx -uroot@sys -P2881
+
+# 通过 obproxy 场景
+obdiag config -hxx.xx.xx.xx -uroot@sys#obtest  -p***** -P2883
+
 ```
+
+注意：使用 `config` 命令会进入交互模式按照提示填入信息，obdiag >= 2.4.0 版本支持通过 `--config` 参数来传递用户侧的配置文件，让使用者可以无配置文件即可开箱即用 obdiag
 
 ### 2.2 一键诊断
 
