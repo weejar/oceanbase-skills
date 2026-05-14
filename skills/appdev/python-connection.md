@@ -1,4 +1,4 @@
-# Python Connection (PyMySQL/mysqlclient)
+# Python Connection (PyMySQL/mysqlclient/JDBC)
 
 ## Overview
 
@@ -188,7 +188,9 @@ For Oracle mode, Python does not have a native direct driver. You need to use th
 import jaydebeapi
 
 # 配置连接参数
+# jdbc:oceanbase://IP:PORT
 url = 'jdbc:oceanbase://172.20.2.2:2883'
+#USERNAME@TANTENT_NAME#CLUSTER_NAME
 user = 'anbob@orcl#enmotest'
 password = 'anbob9876'
 # 驱动类路径，通常不需要更改
