@@ -19,7 +19,7 @@ A collection of 96 standalone reference guides for OceanBase Database (V4.2/V4.4
 | User asks about… | Read from |
 |------------------|-----------|
 | Backup, recovery, tenant management, resource units, logs | `skills/admin/` |
-| Java/Python/Go/Node.js/.NET dev, connection pooling, JSON, transactions | `skills/appdev/` |
+| Java/Python/Go/Node.js/.NET dev, connection pooling, JSON, transactions , connect oceanbase | `skills/appdev/` |
 | Distributed architecture, multi-tenant, Zone, OBProxy, Paxos, resource isolation | `skills/architecture/` |
 | Data modeling, partitioning strategy, tablegroup design | `skills/design/` |
 | OBD deployment, schema migration, version upgrade | `skills/devops/` |
