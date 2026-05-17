@@ -220,7 +220,10 @@ conn.close()
 
 ---
 
+The oceanbase JDBC driver file path  ./references/oceanbase-client-2.4.1.jar
+
 ## Sources
+
 - https://en.oceanbase.com/docs/oceanbase-database/v4.2.5/python
 - https://www.oceanbase.com/docs/oceanbase-database-cn/v4.2.5/python
 - https://pymysql.readthedocs.io/

@@ -1,6 +1,6 @@
 # Skills Index — OceanBase DB Skills
 
-Progress tracking for all 96 skill files. Update the `[ ]` → `[x]` checkbox as files are completed.
+Progress tracking for all 105 skill files. Update the `[ ]` → `[x]` checkbox as files are completed.
 
 ---
 
@@ -15,9 +15,9 @@ Progress tracking for all 96 skill files. Update the `[ ]` → `[x]` checkbox as
 
 ---
 
-## P0 — Core DBA Topics (26/26 COMPLETE ✓)
+## P0 — Core DBA Topics (28/28 COMPLETE ✓)
 
-### admin/ (6/6 COMPLETE)
+### admin/ (9/9 COMPLETE)
 
 - [x] `skills/admin/backup-recovery.md` — 物理备份恢复概述与策略
 - [x] `skills/admin/log-archive.md` — 归档日志管理
@@ -25,6 +25,8 @@ Progress tracking for all 96 skill files. Update the `[ ]` → `[x]` checkbox as
 - [x] `skills/admin/physical-restore.md` — 物理恢复与表级恢复
 - [x] `skills/admin/user-management.md` — 用户与权限管理基础
 - [x] `skills/admin/tenant-management.md` — 租户创建/扩缩容/克隆/资源池管理
+- [x] `skills/admin/seekdb.md` — SeekDB AI原生混合搜索数据库
+- [x] `skills/admin/cluster-management.md` — 集群管理（Zone/Server/Unit迁移/扩缩容）
 
 ### architecture/ (7/7 COMPLETE)
 
@@ -133,9 +135,9 @@ Progress tracking for all 96 skill files. Update the `[ ]` → `[x]` checkbox as
 
 ---
 
-## P3 — Ecosystem Tools & AI (11/11 COMPLETE ✓)
+## P3 — Ecosystem Tools & AI (17/17 COMPLETE ✓)
 
-### tools/ (8/8 COMPLETE)
+### tools/ (14/14 COMPLETE)
 
 - [x] `skills/tools/ocp-platform.md` — OCP云平台管理
 - [x] `skills/tools/oms-migration.md` — OMS迁移服务
@@ -145,6 +147,12 @@ Progress tracking for all 96 skill files. Update the `[ ]` → `[x]` checkbox as
 - [x] `skills/tools/obd-deployer.md` — OBD部署器
 - [x] `skills/tools/ob-operator.md` — ob-operator Kubernetes部署
 - [x] `skills/tools/oblogproxy.md` — oblogproxy Binlog服务
+- [x] `skills/tools/testing-and-benchmark.md` — OBD测试与基准测试（Sysbench/TPC-H/TPC-C）
+- [x] `skills/tools/seekdb-obd-operations.md` — SeekDB OBD操作（部署/HA/switchover/failover）
+- [x] `skills/tools/obd-config-deployment.md` — OBD配置文件部署参考
+- [x] `skills/tools/obd-monitoring-setup.md` — OBD监控部署（Prometheus+Grafana）
+- [x] `skills/tools/tenant-obd-management.md` — OBD租户管理命令（创建/备份/恢复）
+- [x] `skills/tools/sys-tenant-connection.md` — Sys租户连接与租户信息查询
 
 ### ai/ (3/3 COMPLETE)
 
@@ -159,7 +167,7 @@ Progress tracking for all 96 skill files. Update the `[ ]` → `[x]` checkbox as
 | Category | Total | Completed | Remaining |
 |----------|-------|------------|------------|
 | Metadata | 6 | 6 | 0 |
-| P0: admin/ | 6 | 6 | 0 |
+| P0: admin/ | 9 | 9 | 0 |
 | P0: architecture/ | 7 | 7 | 0 |
 | P0: performance/ | 7 | 7 | 0 |
 | P0: monitoring/ | 6 | 6 | 0 |
@@ -171,9 +179,9 @@ Progress tracking for all 96 skill files. Update the `[ ]` → `[x]` checkbox as
 | P2: design/ | 3 | 3 | 0 |
 | P2: devops/ | 3 | 3 | 0 |
 | P2: features/ | 5 | 5 | 0 |
-| P3: tools/ | 8 | 8 | 0 |
+| P3: tools/ | 14 | 14 | 0 |
 | P3: ai/ | 3 | 3 | 0 |
-| **Total** | **96** | **96** | **0** |
+| **Total** | **105** | **105** | **0** |
 
 ---
 
