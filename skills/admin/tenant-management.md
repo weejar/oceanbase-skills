@@ -108,13 +108,38 @@ ALTER RESOURCE POOL pool_small UNIT_NUM = 2;
 
 ### View Tenants
 
-```sql
--- MySQL Mode
-SHOW TENANTS;
+> **💡 See Also**: For detailed connection methods and comprehensive tenant queries, see [`tools/sys-tenant-connection.md`](../tools/sys-tenant-connection.md).
+>
+> That guide covers:
+> - Connecting to sys tenant via MySQL client, OBClient, and Python
+> - Full tenant list query with all columns (`__all_tenant`)
+> - Resource allocation details (units & pools)
+> - Python health check script
 
+**First connect to sys tenant**, then run:
+
+```sql
 -- Both modes (system view)
-SELECT tenant_id, tenant_name, status
+SELECT 
+    TENANT_ID, 
+    TENANT_NAME, 
+    TENANT_TYPE, 
+    STATUS, 
+    COMPATIBILITY_MODE 
 FROM oceanbase.DBA_OB_TENANTS;
+
+-- Direct system table query (recommended for full details)
+SELECT
+    tenant_id,
+    tenant_name,
+    status,
+    CASE compatibility_mode WHEN 0 THEN 'MYSQL' WHEN 1 THEN 'ORACLE' END AS compat_mode,
+    zone_list,
+    locality
+FROM oceanbase.__all_tenant
+WHERE in_recyclebin = 0
+  AND tenant_name NOT LIKE 'META$%'
+ORDER BY tenant_id;
 
 -- obd tool
 obd cluster tenant show <deploy_name>
@@ -168,8 +193,6 @@ CREATE TENANT tenant_app_clone
 SELECT unit_id, name, max_cpu, memory_size, data_disk_size
 FROM oceanbase.DBA_OB_UNITS;
 ```
-
-
 
 ### Optimize Tenant
 

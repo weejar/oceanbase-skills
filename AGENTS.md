@@ -19,6 +19,7 @@ When the user asks about any of the topics below, read the corresponding file(s)
 | User creation, password policy, roles | `skills/admin/user-management.md` |
 | Tenant creation, tenant scaling, resource pool, resource unit | `skills/admin/tenant-management.md` |
 | Manage OceanBase cluster lifecycle using obd | `skills/admin/cluster-management.md` |
+| SeekDB product overview, AI hybrid search | `skills/admin/seekdb.md` |
 
 
 
@@ -177,6 +178,12 @@ When the user asks about any of the topics below, read the corresponding file(s)
 | OBD, OceanBase Deployer, cluster deployment | `skills/tools/obd-deployer.md` |
 | ob-operator, Kubernetes operator, K8s deployment | `skills/tools/ob-operator.md` |
 | oblogproxy, Binlog service, CDC, data replication | `skills/tools/oblogproxy.md` |
+| Sysbench, TPC-H, TPC-C, mysqltest, obd test | `skills/tools/testing-and-benchmark.md` |
+| SeekDB obd commands, HA, switchover, failover | `skills/tools/seekdb-obd-operations.md` |
+| OBD config file deployment, YAML configuration | `skills/tools/obd-config-deployment.md` |
+| Prometheus, Grafana, OBAgent monitoring setup | `skills/tools/obd-monitoring-setup.md` |
+| obd tenant commands, tenant backup/restore | `skills/tools/tenant-obd-management.md` |
+| Sys tenant connection, tenant listing, tenant resource query | `skills/tools/sys-tenant-connection.md` |
 
 ---
 
@@ -194,7 +201,7 @@ When the user asks about any of the topics below, read the corresponding file(s)
 
 | Category | File Count |
 |----------|-----------|
-| admin/ | 6 |
+| admin/ | 9 |
 | appdev/ | 11 |
 | architecture/ | 7 |
 | design/ | 3 |
@@ -206,6 +213,6 @@ When the user asks about any of the topics below, read the corresponding file(s)
 | security/ | 5 |
 | sql-dev/ | 5 |
 | plsql/ | 3 |
-| tools/ | 8 |
+| tools/ | 14 |
 | ai/ | 3 |
-| **Total** | **96** |
+| **Total** | **105** |

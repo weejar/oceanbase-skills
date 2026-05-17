@@ -34,6 +34,14 @@ rpm -ivh obd-*.rpm
 tar -xzf oceanbase-ce-4.2.1.el7.x86_64.tar.gz
 export PATH=$PWD/bin:$PATH
 
+# 方式3： yum 安装
+# 添加 OceanBase 官方的 YUM 仓库
+yum install -y yum-utils
+yum-config-manager --add-repo https://mirrors.aliyun.com/oceanbase/OceanBase.repo
+
+# 直接安装 ob-deploy（即 OBD）
+yum install -y ob-deploy
+
 # 验证
 obd --version
 obd list

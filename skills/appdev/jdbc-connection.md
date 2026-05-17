@@ -140,19 +140,48 @@ Connection conn = ds.getConnection();
 
 ## Oracle Mode (JDBC)
 
-OceanBase Oracle mode also uses MySQL protocol for JDBC:
+For Oracle mode, Python does not have a native direct driver. You need to use the jaydebeapi library via JDBC bridging to connect.
 
-```java
-String url = "jdbc:mysql://10.0.0.1:2881/test_db?useSSL=false";
-String user = "app_user@oracle_tenant";
-// Same JDBC driver! OceanBase Oracle mode speaks MySQL wire protocol.
+```python
+import jaydebeapi
+
+# 配置连接参数
+# jdbc:oceanbase://IP:PORT
+url = 'jdbc:oceanbase://172.20.2.2:2883'
+#USERNAME@TANTENT_NAME#CLUSTER_NAME
+user = 'anbob@orcl#enmotest'
+password = 'anbob9876'
+# 驱动类路径，通常不需要更改
+driver = 'com.alipay.oceanbase.jdbc.Driver'
+# Jar 包路径
+jar_file = 'D:\code\oracle-compatibility-tool\pydrivers\oceanbase-client-2.4.1.jar' 
+
+# 建立连接
+conn = jaydebeapi.connect(
+    driver, 
+    url, 
+    [user, password], 
+    jar_file
+)
+
+curs = conn.cursor()
+# 执行查询
+curs.execute("SELECT * FROM test")
+result = curs.fetchall()
+
+for row in result:
+    print(row)
+
+curs.close()
+conn.close()
 ```
-
-> **Important**: You still use MySQL JDBC driver for Oracle mode.
 
 ---
 
+The oceanbase JDBC driver file path  ./references/oceanbase-client-2.4.1.jar
+
 ## Sources
+
 - https://en.oceanbase.com/docs/oceanbase-database/v4.2.5/jdbc
 - https://www.oceanbase.com/docs/oceanbase-database-cn/v4.2.5/jdbc
 - https://en.oceanbase.com/docs/oceanbase-database/v4.2.5/jdbc-url-parameters
